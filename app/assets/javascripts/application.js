@@ -14,7 +14,9 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require config_map
 //= require maps
+
 
 
 
