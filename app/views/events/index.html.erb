@@ -1,0 +1,22 @@
+<h1>Eventos</h1>
+<h3>Falta filtrar por Fundación</h3>
+<table>
+	<thead>
+		<th>Nombre</th>
+		<th>Descripción</th>
+		<th>Empieza</th>
+		<th>Termina</th>
+		<th>Edit/Delete</th>
+	</thead>
+		<% @events.each do |event| %>
+			<tr>
+				<td><%= link_to event.name, event_path(event) %></td>
+				<td><%= event.description %></td>
+				<td><%= event.initial_date %></td>
+				<td><%= event.end_date %></td>
+				<td><%= link_to "Edit",edit_event_path(event) %><%= link_to "Delete", event_path(event), method: :delete %></td>
+			</tr>
+		<% end %>
+</table>
+
+<%= link_to "Nuevo Evento", new_event_path %>

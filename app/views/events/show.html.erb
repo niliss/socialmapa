@@ -1,0 +1,35 @@
+<h1><%= @event.name %></h1>
+<h3>Description:</h3>
+<%= @event.description %>
+<h3>Fecha inicial</h3>
+<%= @event.initial_date %>
+<h3>Fecha final</h3>
+<%= @event.end_date %>
+
+		<%= link_to "Edit",edit_event_path(@event) %>
+		<%= link_to "Delete", event_path(@event), method: :delete %>
+
+		<%= link_to "Inscribite a este evento",new_event_volunteer_path(params[:id]) %>
+
+		<h3>Esto solo para la fundación que este inscrita</h3>
+	
+<table>
+	<thead>
+		<th>nombre</th>
+		<th>email</th>
+	</thead>
+	<tbody>
+		<% @volunteers.each do |volunteer| %>
+		<tr>
+			<td><%= volunteer.name %></td>
+			<td><%= volunteer.email %></td>
+		</tr>
+		<% end %>
+		<tr>
+			<th>total</th>
+			<th><%= @volunteers.count %></th>
+		</tr>
+	</tbody>
+
+
+</table>
