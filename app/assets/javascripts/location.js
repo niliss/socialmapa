@@ -43,7 +43,6 @@ function displayPosition(position) {
   title: 'Atom House',
   infoWindow: {
     content: '<h1>Location Name</h1>'
-    
   }
   });
 
