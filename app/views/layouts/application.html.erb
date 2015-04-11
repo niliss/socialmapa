@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
+
   <title>Mapasocial</title>
+  <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQUwvPEzR9OprimXiGF_m30_c9KELKPmA">
+  </script>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
+
+
   <%= csrf_meta_tags %>
 
-  
+
 
 </head>
 <body>
+
+
  <p class="notice"><%= notice %></p>
  <p class="alert"><%= alert %></p>
 <%= yield %>
-
+ 
 </body>
 </html>
