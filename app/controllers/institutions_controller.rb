@@ -10,9 +10,12 @@ class InstitutionsController < ApplicationController
   end
 
   def create
-  	@institution = Institution.new(institution_params) 
-    @institution.save
-    redirect_to institutions_path
+    @institution = Institution.new(institution_params)
+    if @institution.save
+      redirect_to root_path
+    else
+      render 'new'
+    end
   end
 
   def edit
@@ -30,7 +33,7 @@ class InstitutionsController < ApplicationController
 
   private
     def institution_params
-      params.require(:institution).permit(:name, :picture, :category, :description, :phone, :adress, :email, :website)
+      params.require(:institution).permit(:name, :category, :description, :phone, :adress, :email, :website)
     end
 
 end

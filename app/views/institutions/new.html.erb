@@ -1,18 +1,16 @@
 <h1>New Form</h1>
-<%= form_for :institution do |f| %>
+<%= form_for @institution do |f| %>
   <p>
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </p>
  
-  <p>
-    <%= f.label :picture %><br>
-    <%= f.text_field :picture %>
-  </p>
+    <%#= f.label :picture %><br>
+    <%#= f.text_field :picture %>
  
   <p>
     <%= f.label :category %><br>
-    <%= f.select :categories, Institution.categories.keys.to_a.map { |w| [w.humanize, w] }%>
+    <%= f.select :category, Institution.categories.keys.to_a.map { |w| [w.humanize, w] }%>
 
     <%#= f.input :category, as: select, collection: Institution.categories.keys.to_a%>
   </p>
@@ -33,7 +31,7 @@
   </p>
  
   <p>
-    <%= f.label :email %><br>email:string
+    <%= f.label :email %><br>
     <%= f.email_field :email %>
   </p>
  
