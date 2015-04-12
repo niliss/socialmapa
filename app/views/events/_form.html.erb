@@ -31,11 +31,14 @@
 
   <p>
     <%= f.label "Latitud" %>
-    <%= location.number_field :latitude %>
+    <%= f.number_field :latitude %>
   </p>
   <p>
     <%= f.label "Longitud" %>
-    <%= location.number_field :longitude %> 
+    <%= f.number_field :longitude %>
+    <%= params[:institution_id] %>
+    <%#= hidden_field :event, :institution_id, :value => params[:institution_id] %>
+    <%= hidden_field :event , :institution_id, :value => params[:institution_id] %>
   </p>
   <p>
     <%= f.submit %>

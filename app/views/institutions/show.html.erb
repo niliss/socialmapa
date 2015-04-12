@@ -5,11 +5,13 @@
   <h1><%= @institution.name %> </h1>
   <p><%= @institution.description %> </p>
   <% @institution.events.each do |event| %>
-  <p><%= @event.name %> </p>
+  <p><%= event.name %> </p>
   <% end %>
   </div>
   <div class="col-md-4">.col-md-4</div>
 </div>
+
+<%= link_to "Crea un nuevo evento", new_event_path(:institution_id => @institution.id ) %>
 
 </div>
 
