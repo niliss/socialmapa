@@ -15,6 +15,18 @@ class VolunteersController < ApplicationController
   	end
   end
 
+  def destroy
+    @volunteer = Volunteer.find((params[:id]))
+    @volunteer.destroy
+    redirect_to event_path(@volunteer.event_id)
+  end
+
+  # def destroy
+  #   @event = Event.find(params[:id])
+  #   @event.destroy
+  #   redirect_to events_path
+  # end
+
    private
   	def volunteer_params
   		params.require(:volunteer).permit(:name, :email)
