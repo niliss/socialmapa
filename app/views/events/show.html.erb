@@ -11,18 +11,20 @@
 
 		<%= link_to "Inscribite a este evento",new_event_volunteer_path(params[:id]) %>
 
-		<h3>Esto solo para la fundación que este inscrita</h3>
+		<h3>Esto solo para la fundación dueña del evento</h3>
 	
 <table>
 	<thead>
 		<th>nombre</th>
 		<th>email</th>
+		<th>Delete</th>
 	</thead>
 	<tbody>
 		<% @volunteers.each do |volunteer| %>
 		<tr>
 			<td><%= volunteer.name %></td>
 			<td><%= volunteer.email %></td>
+			<td><%= link_to 'Delete', event_volunteer_path(@event.id, volunteer), method: :delete  %></td>
 		</tr>
 		<% end %>
 		<tr>

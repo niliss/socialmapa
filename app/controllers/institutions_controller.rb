@@ -2,7 +2,7 @@ class InstitutionsController < ApplicationController
 	# before_action :fetch_question , only: [:show, :edit, :update, :destroy, :down_vote, :up_vote]
 
   def index
-    @institutions = Institutions.all
+    @institutions = Institution.all
   end
 
   def show

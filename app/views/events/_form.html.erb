@@ -28,6 +28,8 @@
   <p>
     <%= f.label "Fecha Final" %><br>
     <%= f.date_field :end_date, class:"form-control" %>
+    <%#= hidden_field :event , :institution_id, :value => params[institution_id] %>
+    <%#= hidden_field :answer , :question_id, :value => @question.id %>
   </p>
   <p>
     <%= f.submit %>
