@@ -37,20 +37,42 @@ function displayPosition(position) {
     zoom: 6
   });
   }
-  map.addMarker({
+  var markers = [{
   lat: 6.209238,
   lng: -75.571572,
   title: 'Atom House',
-  infoWindow: {
-    content: '<h1>Location Name</h1>'
+    infoWindow: {
+      content: '<h1>Location Name</h1>'
+    }
+    }, 
+    {
+    lat: 6.209238,
+    lng: -75.655555,
+    title: 'Atom House 2',
+    infoWindow: {
+      content: '<h1>Location Name</h1>'
+    }
   }
-  });
+  ];
+  var bounds = new google.maps.LatLngBounds();
+
+  for(i=0;i<markers.length;i++) {
+      console.log(markers[i])
+      console.log(markers[i].lat)
+      console.log(markers[i].lng)
+      //console.log(marker)
+      bounds.extend(markers[i].getPosition());
+  }
+
+  map.fitBounds(bounds);
+  };
+
 
   
 }
 
  
-}
+
 
 
 function displayError(error) {

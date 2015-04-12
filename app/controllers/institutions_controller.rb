@@ -10,7 +10,6 @@ class InstitutionsController < ApplicationController
   end
 
   def create
-
   	@institution = Institution.new(institution_params) 
     if  @institution.save
       redirect_to root_path
