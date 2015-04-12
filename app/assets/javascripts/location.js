@@ -23,7 +23,7 @@ function displayPosition(position) {
       div: '#map',
       lat: position.coords.latitude,
       lng: position.coords.longitude,
-      width: "75%",
+      width: "100%",
       height: "650px",
       zoom: 12
   });
@@ -32,7 +32,7 @@ function displayPosition(position) {
     div: '#map',
     lat: 6.209238,
     lng: -75.571572,
-    width: "75%",
+    width: "100%",
     height: "650px",
     zoom: 6
   });

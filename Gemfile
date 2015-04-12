@@ -32,6 +32,8 @@ gem 'puma'
 # installing devise
 gem 'devise' 
 
+# This is for the font-awesome
+gem "font-awesome-rails"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
