@@ -29,6 +29,8 @@ gem 'faker', '~> 1.4.3'
 
 gem 'friendly_id', '~> 5.1.0'
 
+gem 'geocoder'
+
 group :development, :test do
   gem 'byebug'
   gem 'sqlite3'

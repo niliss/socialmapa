@@ -18,6 +18,16 @@ else {
 
 
 function displayPosition(position) {
+  lat = position.coords.latitude
+  lng = position.coords.longitude
+  $.ajax({
+    method: "get",
+    url: "/pages",
+    type: "json",
+    data: {lat: lat, lng: lng}
+  }).done(function(response){
+    console.log(response)
+  }) 
   if(position.coords.latitude && position.coords.longitude) {
    var map = new GMaps({
       div: '#map',
@@ -54,17 +64,15 @@ function displayPosition(position) {
     }
   }
   ];
-  var bounds = new google.maps.LatLngBounds();
-
+  // var bounds = new google.maps.LatLngBounds();
   for(i=0;i<markers.length;i++) {
       console.log(markers[i])
       console.log(markers[i].lat)
       console.log(markers[i].lng)
-      //console.log(marker)
-      bounds.extend(markers[i].getPosition());
+      //bounds.extend(markers[i].getPosition());
   }
 
-  map.fitBounds(bounds);
+  //map.fitBounds(bounds);
   };
 
 
@@ -89,7 +97,13 @@ ready = function() {
 
   getLocation();
 
+
+
 };
+
+
+// /?data=
+// params[lat]
 
 $(document).ready(ready);
 $(document).on('page:load', ready);

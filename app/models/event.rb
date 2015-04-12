@@ -8,4 +8,6 @@ class Event < ActiveRecord::Base
 	validates :description, presence: true, length: { minimum: 3 }
 	validates :initial_date, presence: true
 	validates :end_date, presence:true
+	reverse_geocoded_by :latitude, :longitude
+	after_validation :reverse_geocode  # auto-fetch address
 end
