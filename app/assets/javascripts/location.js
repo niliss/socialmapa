@@ -9,7 +9,7 @@ if (navigator.geolocation) {
     displayError,
     // need to figure out if the 600... is indeed an hour interval..
     // does not provide right result right now
-    { enableHighAccuracy: true, timeout: timeoutVal, maximumAge: 6 } //this timeout not working
+    { enableHighAccuracy: true, timeout: timeoutVal, maximumAge: 60000 } //this timeout not working
   );
 }
 else {
@@ -62,6 +62,14 @@ function displayError(error) {
   alert("Error: " + errors[error.code]);
 }
 
-getLocation()
+var ready;
+ready = function() {
+
+  getLocation();
+
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);
 
  
