@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150411203050) do
+ActiveRecord::Schema.define(version: 20150412011023) do
 
   create_table "events", force: :cascade do |t|
     t.string   "name"
@@ -32,8 +32,12 @@ ActiveRecord::Schema.define(version: 20150411203050) do
     t.string   "address"
     t.string   "email"
     t.string   "website"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
   end
 
   create_table "users", force: :cascade do |t|

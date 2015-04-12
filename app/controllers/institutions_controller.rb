@@ -11,8 +11,13 @@ class InstitutionsController < ApplicationController
 
   def create
   	@institution = Institution.new(institution_params) 
-    @institution.save
-    redirect_to institutions_path
+    if  @institution.save
+      redirect_to pages_path
+    else
+      render 'new'
+    end
+
+    
   end
 
   def edit

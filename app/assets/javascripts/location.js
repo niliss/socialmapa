@@ -24,7 +24,7 @@ function displayPosition(position) {
       lat: position.coords.latitude,
       lng: position.coords.longitude,
       width: "100%",
-      height: "650px",
+      height: "450px",
       zoom: 12
   });
   } else {
@@ -33,7 +33,7 @@ function displayPosition(position) {
     lat: 6.209238,
     lng: -75.571572,
     width: "100%",
-    height: "650px",
+    height: "450px",
     zoom: 6
   });
   }
