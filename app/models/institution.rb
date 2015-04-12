@@ -5,6 +5,7 @@ class Institution < ActiveRecord::Base
 	# we still need to add the URL if someone does not add this
   	has_attached_file :logo, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
   	validates_attachment_content_type :logo, :content_type => /\Aimage\/.*\Z/
-
+  	extend FriendlyId
+  	friendly_id :name, use: :slugged
 
 end

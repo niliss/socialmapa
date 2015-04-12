@@ -6,7 +6,7 @@ class InstitutionsController < ApplicationController
   end
 
   def show
-  	@institution = Institution.find(params[:id])
+  	@institution = Institution.friendly.find(params[:id])
   end
 
   def create
@@ -35,7 +35,7 @@ class InstitutionsController < ApplicationController
 
   private
     def institution_params
-      params.require(:institution).permit(:name, :picture, :category, :description, :phone, :adress, :email, :website)
+      params.require(:institution).permit(:name, :picture, :category, :description, :phone, :adress, :email, :website, :slug)
     end
 
 end
