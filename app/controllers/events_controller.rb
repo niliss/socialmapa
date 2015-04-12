@@ -9,12 +9,18 @@ class EventsController < ApplicationController
   def create
   	@event = Event.new(event_params)
   	@event.event_type = true
+    # create_location
   	if @event.save
   		redirect_to events_path
   	else
   		render 'new'
   	end
   end
+
+  # def create_location
+  #   @event = Event.find(params[:id])
+  #   @event.locations.create 
+  # end
 
   def show
     @event = Event.find(params[:id])
@@ -41,7 +47,7 @@ class EventsController < ApplicationController
 
   private
   	def event_params
-  		params.require(:event).permit(:name, :description, :initial_date, :end_date)
+  		params.require(:event).permit(:name, :description, :initial_date, :end_date, locations_attributes:[:latitude, :longitude])
   	end
 
 
