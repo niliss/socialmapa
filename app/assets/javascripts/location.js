@@ -26,7 +26,36 @@ function displayPosition(position) {
     type: "json",
     data: {lat: lat, lng: lng}
   }).done(function(response){
-    console.log(response)
+    console.log(response) 
+    var myStringArray = response;
+    var arrayLength = myStringArray.length;
+    for (var i = 0; i < arrayLength; i++) {
+    //console.log(myStringArray[i]);
+    console.log(myStringArray[i].name);
+    map.addMarker({
+        lat: myStringArray[i].latitude,
+        lng: myStringArray[i].longitude,
+        title: myStringArray[i].name,
+        infoWindow: {
+          content: myStringArray[i].name
+        }
+  });
+}
+
+//     // console.log(response)
+//      for(i=0;i<response.length;i++) {
+//       console.log(response) 
+//       // console.log(response.longitude)
+// //       map.addMarker({
+// //       lat: response.lattitude,
+// //       lng: response.longitude,
+// //       title: response.name,
+// //       infoWindow: {
+// //         content: response.name
+// //       }
+// // });
+//   }
+
   }) 
   if(position.coords.latitude && position.coords.longitude) {
    var map = new GMaps({
@@ -47,30 +76,9 @@ function displayPosition(position) {
     zoom: 6
   });
   }
-  var markers = [{
-  lat: 6.209238,
-  lng: -75.571572,
-  title: 'Atom House',
-    infoWindow: {
-      content: '<h1>Location Name</h1>'
-    }
-    }, 
-    {
-    lat: 6.209238,
-    lng: -75.655555,
-    title: 'Atom House 2',
-    infoWindow: {
-      content: '<h1>Location Name</h1>'
-    }
-  }
-  ];
-  // var bounds = new google.maps.LatLngBounds();
-  for(i=0;i<markers.length;i++) {
-      console.log(markers[i])
-      console.log(markers[i].lat)
-      console.log(markers[i].lng)
-      //bounds.extend(markers[i].getPosition());
-  }
+
+ 
+ 
 
   //map.fitBounds(bounds);
   };

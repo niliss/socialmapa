@@ -11,8 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150412182326) do
+ActiveRecord::Schema.define(version: 20150413152120) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "events", force: :cascade do |t|
     t.string   "name"
@@ -20,11 +22,11 @@ ActiveRecord::Schema.define(version: 20150412182326) do
     t.date     "initial_date"
     t.date     "end_date"
     t.boolean  "event_type"
-    t.datetime "created_at",                              null: false
-    t.datetime "updated_at",                              null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.integer  "institution_id"
-    t.decimal  "latitude",       precision: 10, scale: 6
-    t.decimal  "longitude",      precision: 10, scale: 6
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
