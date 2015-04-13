@@ -21,23 +21,42 @@
 body {
 	margin: 0px;
 	font-family: 'Montserrat', sans-serif;
+	background-color: #dedddb;
 };
 
 body p {
 	font-family: 'Neuton', serif;
 };
 
+#top {
+	margin-bottom: 0;
+}
+#bar {
+	background-color: black;
+	padding: 5px;
+}
+
 .navbar img {
-	height: 50px;
+	height: 45px;
+};
+
+.nav {
+	padding: 10px;	
 };
 
 .container {
 	margin-top: 0px;
+}
+#yield-style {
+	background-color: white;
+}
 
-};
+.row {
+	padding: 2px 20px;
+}
 
 .title {
-	margin-top: -60px;
+	margin-top: -69px;
 	margin-bottom: 40px;
 	vertical-align: center;
 	
@@ -45,8 +64,8 @@ body p {
 
 .title h1 {
 	font-size: 24px;
+	color: white;
 };
-
 
 #map {
 	margin-top: 0px;
@@ -60,6 +79,4 @@ footer {
 	padding-top: 60px;
 	margin-top: 150px;
 }
-
-
 
